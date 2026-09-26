@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportZone - Sports Equipment Store</title>
+  <!-- Google Font for headings and body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="header" id="header">
+    <div class="nav-container">
+      <a href="#home" class="logo">Sport<span>Zone</span></a>
+
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="cart-btn" id="cartBtn">
+          🛒 Cart <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO / BANNER SECTION ============ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-tag">Gear Up. Play Hard. Win Big.</p>
+      <h1 class="hero-title">Everything you need <br> to own the game.</h1>
+      <p class="hero-sub">Bats, balls, rackets, shoes and gym gear picked for players who don't do half measures.</p>
+      <a href="#products" class="btn btn-primary">Shop Equipment</a>
+    </div>
+    <!-- Decorative moving ball element for a single, deliberate animation moment -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="bounce-ball">🏀</div>
+      <div class="field-lines"></div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS SECTION ============ -->
+  <section class="products-section" id="products">
+    <div class="section-heading">
+      <h2>Our Equipment</h2>
+      <p>Hand-picked gear across every sport we love</p>
+    </div>
+
+    <!-- Search bar -->
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search for a bat, ball, shoes..." />
+      <span class="search-icon">🔍</span>
+    </div>
+
+    <!-- Product cards get inserted here by JavaScript -->
+    <div class="products-grid" id="productsGrid"></div>
+
+    <!-- Shown when search finds nothing -->
+    <p class="no-results" id="noResults" hidden>No equipment matches your search. Try a different word.</p>
+  </section>
+
+  <!-- ============ ABOUT US SECTION ============ -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <h2>About SportZone</h2>
+      <p>
+        SportZone started with a simple idea: every player, from weekend warriors to
+        serious competitors, deserves equipment that keeps up with them. What began as
+        a small college project has grown into a one-stop shop for cricket, football,
+        basketball, badminton, tennis, and gym essentials.
+      </p>
+      <p>
+        We test every product for quality and comfort before it reaches our shelves,
+        because your performance shouldn't be limited by your gear.
+      </p>
+      <div class="about-stats">
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Products</p>
+        </div>
+        <div class="stat">
+          <h3>10K+</h3>
+          <p>Happy Players</p>
+        </div>
+        <div class="stat">
+          <h3>8</h3>
+          <p>Sports Covered</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT US SECTION ============ -->
+  <section class="contact-section" id="contact">
+    <div class="section-heading">
+      <h2>Get In Touch</h2>
+      <p>Questions about a product or your order? Send us a message.</p>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <input type="text" id="nameInput" placeholder="Your Name" required />
+        <input type="email" id="emailInput" placeholder="Your Email" required />
+      </div>
+      <input type="text" id="subjectInput" placeholder="Subject" required />
+      <textarea id="messageInput" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <p class="form-success" id="formSuccess" hidden>✅ Thanks! Your message has been sent.</p>
+    </form>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Sport<span>Zone</span></h3>
+        <p>Your one-stop shop for every sport you play.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📍 123 Stadium Road, Pune, India</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ support@sportzone.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2026 SportZone. Built as a college project.</p>
+  </footer>
+
+  <!-- ============ SHOPPING CART SIDEBAR ============ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="close-cart" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" id="cartEmpty">Your cart is empty. Go add some gear!</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
